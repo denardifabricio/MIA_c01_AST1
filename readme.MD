@@ -15,4 +15,5 @@ Análisis de Serie de Tiempo I
 ## Cohorte
 01-2025
 
-# Branch de Fabri
+# Resolución
+Puede visualizar la resolución del trabajo práctico en el siguiente [link](summary.ipynb).
