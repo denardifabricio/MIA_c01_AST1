@@ -37,6 +37,8 @@ El dataset, actualizado cada 15 minutos durante un mes, es útil para analizar p
 # Pregunta de investigación
 ¿Podemos predecir la cantidad de vehículos en un determinado día y horario? 
 
+Nos hacemos también una pregunta complementaria: estableciendo de antemano ciertos umbrales del estádo del tráfico, ¿podemos seguerir recomendar o evitar el uso de la autopista en análisis en dicho instante de tiempo?
+
 ### Nota
 Debido a que el dataset se actualiza muy frecuentemente, optamos por trabajar con una versión local.  Los datos pueden consultarse en este [link](dataset/TrafficTwoMonth.csv).
 
@@ -49,7 +51,17 @@ Puede visualizar la resolución del trabajo práctico en el siguiente [link](sum
 ## Análisis con Redes Neuronales
 Puede visualizar la resolución del trabajo práctico en el siguiente [link](summary_neural_networks.ipynb).
 
-Nos hacemos también una pregunta complementaria: estableciendo de antemano ciertos umbrales del estádo del tráfico, ¿podemos seguerir recomendar o evitar el uso de la autopista en análisis en dicho instante de tiempo?
+### Instalación de Paquetes
+Los paquetes necesarios están listados en el archivo: *requirements.txt*
+
+- Crear el entorno virtual: `python3.10 -m venv venv`
+- Activar el entorno virtual: `source venv/bin/activate`
+- Actualizar pip: `python3.10 -m pip install --upgrade pip`
+- Instalar paquetes desde *requirements.txt*: `pip install -r requirements.txt`
+- Desinstalar todos los paquetes: `pip freeze | xargs pip uninstall -y`
+- Desactivar el entorno virtual: `deactivate`
+- Eliminar el entorno virtual (opcional): `rm -rf venv`
+
 
 
 ## Modelos de Serie de Tiempos
@@ -82,10 +94,10 @@ Nos hacemos también una pregunta complementaria: estableciendo de antemano cier
 Analizando no solo el AIC sino también que tenga todos sus coeficientes estadísticamente significativos, dimos por "ganador" al ARMA(1,2).
 
 
-<img src="predict_arima1_2.png">
+<img src="src/predict_arima1_2.png">
 
 
-<img src="forecast_arima1_2.png">
+<img src="src/forecast_arima1_2.png">
 
 
 
@@ -133,7 +145,7 @@ En cada apartado puede ver un detalle de las conclusiones y análisis pormenoriz
 Hicimos un análisis vectorial entre la cantidad de vehículos y el estado del tráfico.
 
 
-<img src="forecast_vectorial.png">
+<img src="src/forecast_vectorial.png">
 
 
 ### Comparación de Métricas entre Modelos de Series de Tiempo (TS) y Modelos Vectoriales (Vec)
