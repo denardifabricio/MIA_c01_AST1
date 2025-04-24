@@ -1,7 +1,7 @@
 <img src="https://github.com/hernancontigiani/ceia_memorias_especializacion/raw/master/Figures/logoFIUBA.jpg" alt="logoFIUBA" width="600">
 
 
-## Alumno
+## Alumnos
 - Denardi, Fabricio
 - Perez Winter, Alan Erik
 - Pertierra, Valentin
@@ -14,6 +14,10 @@ Análisis de Serie de Tiempo I
 
 ## Cohorte
 01-2025
+
+## Repo
+https://github.com/denardifabricio/MIA_c01_AST1
+
 
 # Dataset de estudio elegido
 # Real Traffic Prediction Dataset (Conjunto de datos para la predicción de tráfico real) 
