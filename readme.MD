@@ -176,3 +176,37 @@ Hicimos un análisis vectorial entre la cantidad de vehículos y el estado del t
 1. Obtuvimos un peor MAPE que el mejor modelo univariado para predecir la cantidad de vehículos en la autopista.
 
 2. Para analizar la pregunta secundaria, por el contrario obtenemos, hemos logrado aumentar la precisión, el accuracy, recall y F1 Score.  
+
+
+# Análisis complementario con redes neuronales
+
+## Resumen Métricas
+
+Para comparar el rendimiento de los cuatro modelos de redes neuronales (Dense, LSTM, CNN y CNN-LSTM) sobre el conjunto de test, se utiliza el MAPE (Mean Absolute Percentage Error) como métrica de evaluación. Esta métrica nos permite medir el error porcentual promedio entre las predicciones y los valores reales, facilitando la comparación directa entre los diferentes modelos.
+
+![Métricas de prueba](figures/mape_comparison.png)
+
+
+## Conclusiones
+En este análisis, se implementaron y evaluaron cuatro arquitecturas diferentes de redes neuronales para la predicción de series temporales: Dense (red neuronal densa tradicional), LSTM (Long Short-Term Memory), CNN (Red Neuronal Convolucional) y una arquitectura híbrida CNN-LSTM.
+
+Los resultados obtenidos muestran un rendimiento similar entre los cuatro modelos, con MAPEs que oscilan entre 27% y 29%. El modelo LSTM mostró el mejor rendimiento con 27.12%, seguido por el CNN-LSTM con 27.26%, mientras que el CNN y Dense tuvieron errores ligeramente mayores de 28.11% y 28.89% respectivamente. Este nivel de error sugiere que hay espacio para mejoras en el rendimiento de los modelos.
+
+Algunas limitaciones y posibles áreas de mejora incluyen:
+
+1. Configuración de ventanas: Se utilizó una ventana de entrada fija de 96 datos y una ventana de salida de 1 dato. Considerando la estacionalidad diaria observada (ciclos de 96 datos) y el patrón de la serie (períodos de cambios pequeños interrumpidos por cambios significativos), podría ser beneficioso:
+   - Reducir la ventana de entrada
+   - Aumentar la ventana de salida
+   - Experimentar con diferentes combinaciones de ambas
+
+2. Cantidad de datos: El conjunto de datos actual es relativamente pequeño (aproximadamente 6000 muestras en 2 meses). Un conjunto de datos más extenso podría permitir:
+   - Mejor aprendizaje de patrones a largo plazo
+   - Mayor capacidad de generalización
+   - Mejor rendimiento general de los modelos
+
+3. Estacionalidad: La serie temporal muestra una clara estacionalidad diaria que podría aprovecharse mejor mediante:
+   - Técnicas de descomposición temporal
+   - Características adicionales basadas en la periodicidad
+   - Arquitecturas de red específicamente diseñadas para capturar patrones cíclicos
+
+Estas observaciones sugieren que, si bien los modelos actuales proporcionan una base sólida, existe potencial para mejorar el rendimiento mediante ajustes en el preprocesamiento de datos, la arquitectura de los modelos y la ampliación del conjunto de datos de entrenamiento.
